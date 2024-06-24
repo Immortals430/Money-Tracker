@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Money Tracker</title>
+  </head>
+  <body>
+    <main>
+      <h1>Money Tracker</h1>
+      <form action="/add-record" method="post">
+        <label for="category">Category</label>
+        <select id="category" name="category" required>
+          <option value="income">Income</option>
+          <option value="expense">Expense</option>
+        </select>
+        <label for="amount">Amount</label>
+        <input
+          type="number"
+          name="amount"
+          id="amount"
+          min="1"
+          max="10000000"
+          required
+        />
+        <label for="description">Info</label>
+        <input type="text" name="description" id="description" required />
+        <label for="date">Date</label>
+        <input type="date" name="date" id="date" required />
+        <button type="submit">Submit</button>
+      </form>
+      <div class="overflow">
+        <table>
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Amount</th>
+              <th>Description</th>
+              <th>Date</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% records.forEach((elem, i) => { %>
+            <tr>
+              <td><%= elem.category %></td>
+              <td class='<%= elem.category == "income" ? "income": "expense" %>'><%= elem.amount %></td>
+              <td><%= elem.description %></td>
+              <td><%= elem.date %></td>
+              <td><a href="/delete-record/<%= elem._id %>">Delete</a></td>
+            </tr>
+            <% }) %>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td>Total</td>
+              <td>₹<%= total %> </td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </main>
+  </body>
+</html>

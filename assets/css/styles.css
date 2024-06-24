@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+body {
+  background-color: #f0f2f5;
+  background: linear-gradient(to left, #d3cce3, #e9e4f0);
+}
+
+main {
+  width: 80%;
+  height: calc(100vh - 100px);
+  background-color: white;
+  margin: auto;
+  margin-top: 50px;
+  box-shadow: 0px 0px 15px 4px rgb(33 33 33 / 37%);
+  padding-top: 16px;
+  position: relative;
+}
+
+main > * {
+  margin-bottom: 50px;
+}
+
+main h1 {
+  font-family: cursive;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: auto;
+  align-items: center;
+}
+
+input,
+select {
+  padding: 5px;
+  border-radius: 5px;
+}
+
+button[type="submit"] {
+  padding: 10px 12px;
+  background-image: linear-gradient(to left, #870000, #190a05);
+}
+
+.overflow {
+  overflow-y: auto;
+  height: 55%;
+  margin-top: 55px;
+}
+
+table {
+  margin: auto;
+  width: 80%;
+  text-align: left;
+}
+
+thead {
+  background-color: #243455;
+  color: white;
+}
+
+th {
+  padding: 10px 5px;
+}
+
+td {
+  padding: 10px 10px;
+}
+
+tbody {
+  background-color: aliceblue;
+}
+
+.income {
+  color: rgb(128, 255, 0);
+}
+
+.expense {
+  color: rgb(255, 0, 0);
+}
+
+.income::before {
+  content: "+";
+}
+
+.expense::before {
+  content: "-";
+}
+
+a,
+button {
+  border: none;
+  padding: 8px 12px;
+  background-color: #fe1301;
+  background-image: linear-gradient(to left, #e43a15, #e65245);
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+tfoot {
+  position: absolute;
+  bottom: 10px;
+}
+
+tfoot tr td {
+  padding-top: 20px;
+  width: 136px;
+  font-size: x-large;
+}
